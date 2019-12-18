@@ -2,3 +2,4 @@ venv
 .vscode
 site.db
 __pycache__
+profile_pictures
