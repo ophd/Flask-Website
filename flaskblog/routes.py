@@ -8,12 +8,23 @@ from flaskblog.forms import RegistrationForm, LoginForm, UpdateAccountForm, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
 
-@app.route('/')
 @app.route('/home')
+@app.route('/')
 def home():
-    posts = Post.query.all()
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.date_posted.desc()).paginate(per_page=10, page=page)
+
     return render_template('home.html', posts=posts)
 
+@app.route('/authors/<string:username>')
+def author_posts(username):
+    page = request.args.get('page', 1, type=int)
+    author = User.query.filter_by(username=username).first_or_404()
+    posts = (Post.query
+                 .filter_by(author=author)
+                 .order_by(Post.date_posted.desc())
+                 .paginate(per_page=10, page=page))
+    return render_template('author_posts.html', posts=posts, author=author)
 
 @app.route('/about')
 def about():
