@@ -3,10 +3,10 @@ from flask import (render_template, url_for, flash, redirect,
 from flaskblog import db
 from flaskblog.models import User, Post
 from flaskblog.posts.forms import PostForm
+from flaskblog.posts.utils import render_post_content
 from flask_login import current_user, login_required
 from markdown import markdown
 
-from flaskblog.posts.utils import render_post_content
 
 posts = Blueprint('posts', __name__)
 
