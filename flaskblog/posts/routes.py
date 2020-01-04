@@ -3,7 +3,6 @@ from flask import (render_template, url_for, flash, redirect,
 from flaskblog import db
 from flaskblog.models import User, Post
 from flaskblog.posts.forms import PostForm
-from flaskblog.posts.utils import render_post_content
 from flask_login import current_user, login_required
 from markdown import markdown
 
@@ -29,8 +28,7 @@ def new_post():
 @posts.route('/post/<int:post_id>')
 def post(post_id):
     post = Post.query.get_or_404(post_id)
-    return render_template('post.html', title=post.title, post=post,
-                render_post_content=render_post_content)
+    return render_template('post.html', title=post.title, post=post)
 
 
 @posts.route('/post/<int:post_id>/update', methods=['GET', 'POST'])

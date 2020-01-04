@@ -1,16 +1,20 @@
 import bleach
 from markdown import markdown
-from flask import Markup
+from flask import Markup, Blueprint
 from markdown.extensions.fenced_code import FencedCodeExtension
 from markdown.extensions.codehilite import CodeHiliteExtension
 
+posts_utils = Blueprint('posts_utils', __name__)
 
-def render_post_content(content):
-    allowed_tags = ['h1', 'h2', 'h3', 'div', 'p', 'code', 'table', 'span',
-                    'pre', 'tr', 'td', 'tbody']
-    allowed_attributes = {'*': ['id', 'class']}
-    html = markdown(content, extensions=[CodeHiliteExtension(
-        linenums=True), FencedCodeExtension()])
-    html = bleach.clean(html, tags=allowed_tags, attributes=allowed_attributes)
-    html = Markup(html)
-    return html
+@posts_utils.app_context_processor
+def utility_processor():
+    def render_post_content(content):
+        allowed_tags = ['h1', 'h2', 'h3', 'div', 'p', 'code', 'table', 'span',
+                        'pre', 'tr', 'td', 'tbody']
+        allowed_attributes = {'*': ['id', 'class']}
+        html = markdown(content, extensions=[CodeHiliteExtension(
+            linenums=True), FencedCodeExtension()])
+        html = bleach.clean(html, tags=allowed_tags, attributes=allowed_attributes)
+        html = Markup(html)
+        return html
+    return dict(render_post_content=render_post_content)
