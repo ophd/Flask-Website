@@ -1,5 +1,6 @@
 venv
 .vscode
 site.db
+test.db
 __pycache__
 profile_pictures
