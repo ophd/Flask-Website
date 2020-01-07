@@ -1,4 +1,5 @@
 venv
+.gitignore
 .vscode
 site.db
 test.db
