@@ -31,8 +31,8 @@ def register():
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))
+    
     form = LoginForm()
-
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
@@ -70,7 +70,8 @@ def account():
         form.email.data = current_user.email
     image_file = url_for(
         'static', filename='profile_pictures/' + current_user.image_file)
-    return render_template('account.html', title='Account', image_file=image_file, form=form)
+    return render_template('account.html', title='Account',
+                           image_file=image_file, form=form)
 
 
 @users.route('/authors/<string:username>')
