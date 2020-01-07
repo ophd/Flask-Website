@@ -1,5 +1,7 @@
 venv
+.coverage
 .vscode
 site.db
+test.db
 __pycache__
 profile_pictures

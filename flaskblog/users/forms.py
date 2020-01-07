@@ -7,10 +7,7 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationE
 
 
 class RegistrationForm(FlaskForm):
-    '''
-    Create a user registration form class
-    based on the flask WT Form FlaskForm class.
-    '''
+
     username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
@@ -30,10 +27,6 @@ class RegistrationForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
-    '''
-    Create a user registration form class
-    based on the flask WT Form FlaskForm class.
-    '''
     email = StringField('Email',
                         validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
@@ -42,10 +35,6 @@ class LoginForm(FlaskForm):
 
 
 class UpdateAccountForm(FlaskForm):
-    '''
-    Create a user registration form class
-    based on the flask WT Form FlaskForm class.
-    '''
     username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
     email = StringField('Email', validators=[DataRequired(), Email()])
     picture = FileField('Update Profile Picture', validators=[FileAllowed(['jpg', 'png', 'jpeg'])])
