@@ -1,5 +1,5 @@
 venv
-.gitignore
+.coverage
 .vscode
 site.db
 test.db
