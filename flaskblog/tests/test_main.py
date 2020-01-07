@@ -27,5 +27,6 @@ class TestMain(unittest.TestCase):
     def test_main_about(self):
         r = self.app.get('/about')
         self.assertEqual(r.status_code, 200)
+        self.assertIn('About', r.data)
 
 
