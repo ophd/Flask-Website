@@ -1,9 +1,11 @@
 from flask import (render_template, url_for, flash, redirect,
-                   request, abort, Blueprint)
+                   request, abort, Blueprint, Markup)
 from flaskblog import db
 from flaskblog.models import User, Post
 from flaskblog.posts.forms import PostForm
 from flask_login import current_user, login_required
+from markdown import markdown
+
 
 posts = Blueprint('posts', __name__)
 
