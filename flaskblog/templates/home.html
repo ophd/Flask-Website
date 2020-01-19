@@ -4,13 +4,14 @@
           <!-- <article class="media content-section"> -->
           <article class="article-contents">
               <h2><a href="{{ url_for('posts.post', post_id=post.id) }}">{{ post.title }}</a></h2>
-                <div class="content">
-                  by <a href="{{ url_for('users.author_posts', username=post.author.username) }}">{{ post.author.username }}</a>
-                  <small>{{ post.date_posted.strftime('%d %B %Y') }}</small>
+              <div class="article-meta">
+                by <a href="{{ url_for('users.author_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+                <small>{{ post.date_posted.strftime('%d %B %Y') }}</small>
               </div>
-              <div>
-                {{ render_post_content(post.content) }}
+              <div class="contents-preview">
+                {{ render_post_content(post.content, True) }}
               </div>
+              <a href="{{ url_for('posts.post', post_id=post.id) }}">read more...</a>
           </article>
       {% endfor %}
       <!-- This code is also used in the author_posts route. Can use \{\% include "<file>.html" \%\} 

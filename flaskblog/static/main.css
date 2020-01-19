@@ -1,3 +1,7 @@
+html, header, body, main{
+    padding: 0;
+    margin: 0;
+}
 .logo{
     font-family: Helvetica, Arial, sans-serif;
     padding: 0;
@@ -20,8 +24,8 @@
     color: rgba(255, 255, 255, 0.8);
     z-index: 2;
     position: absolute;
-    bottom: 4px;
-    left: 45px;
+    bottom: 100px; /*4*/
+    left: 100px; /*45*/
     margin-left: auto;
     margin-right: auto;
 
@@ -33,6 +37,7 @@
 
 .navbar{
     background: rgb(180, 205, 180);
+    font-family: Helvetica, Arial, sans-serif;
 
     display: flex;
     flex-direction: row;
@@ -95,6 +100,7 @@ body{
 
 .article-contents{
     padding-top: 15px;
+    margin-bottom: 40px;
 }
 
 .sidebar{
@@ -119,6 +125,11 @@ p { /* .main-content { */
     float: left;
     padding-top: 10px;
     padding-right: 5px;
+}
+
+.article-meta{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 .flash{
