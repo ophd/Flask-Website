@@ -9,59 +9,59 @@
                     {{ form.username.label(class="") }}
 
                     {% if form.username.errors %}
-                        {{ form.username(class="") }}    
+                        {{ form.username(class="form-input-text-invalid") }}    
                         <div class="invalid-input">
                             {% for error in form.username.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.username(class="") }}
+                        {{ form.username(class="form-input-text") }}
                     {% endif %}
                 </div>
                 <div class="user-field">
                     {{ form.email.label(class="") }}
 
                     {% if form.email.errors %}
-                        {{ form.email(class="") }}    
+                        {{ form.email(class="form-input-text-invalid") }}    
                         <div class="invalid-input">
                             {% for error in form.email.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.email(class="") }}
+                        {{ form.email(class="form-input-text") }}
                     {% endif %}
                 </div>
                 <div class="user-field">
                     {{ form.password.label(class="") }}
                     {% if form.password.errors %}
-                        {{ form.password(class="") }}    
+                        {{ form.password(class="form-input-text-invalid") }}    
                         <div class="invalid-input">
                             {% for error in form.password.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.password(class="") }}
+                        {{ form.password(class="form-input-text") }}
                     {% endif %}
                 </div>
                 <div class="user-field">
                     {{ form.confirm_password.label(class="") }}
                     {% if form.confirm_password.errors %}
-                        {{ form.confirm_password(class="") }}    
+                        {{ form.confirm_password(class="form-input-text-invalid") }}    
                         <div class="invalid-input">
                             {% for error in form.confirm_password.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.confirm_password(class="") }}
+                        {{ form.confirm_password(class="form-input-text") }}
                     {% endif %}
                 </div>
             </fieldset>
             <div class="">
-                {{ form.submit(class="") }}
+                {{ form.submit(class="btn") }}
             </div>
         </form>
     </div>

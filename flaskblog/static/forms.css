@@ -1,4 +1,5 @@
 .invalid-input {
+    font-family: Helvetica, Arial, sans-serif;
     color: rgb(189, 0, 0);
     font-size: 80%;
 }
@@ -22,4 +23,20 @@
 .form-fieldset > legend {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 36px;
+}
+
+.btn {
+    border-width: 6px;
+}
+
+.form-input-text {
+    font-family: Helvetica, Arial, sans-serif;
+    border: 0px;
+    border-bottom: 2px solid gray;
+    height: 2rem;
+    font-size: 20px;
+}
+
+.form-input-text-invalid {
+    border-bottom-color: rgb(189, 0 0);
 }
