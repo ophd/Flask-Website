@@ -1,0 +1,25 @@
+.invalid-input {
+    color: rgb(189, 0, 0);
+    font-size: 80%;
+}
+
+.user-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.user-field > input {
+    width: 60%;
+}
+
+.user-field > label {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    padding-top: 15px;
+}
+
+.form-fieldset > legend {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 36px;
+}
