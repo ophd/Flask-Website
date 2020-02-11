@@ -2,6 +2,7 @@ html, header, body, main{
     padding: 0;
     margin: 0;
 }
+/* Logo */
 .logo{
     font-family: Helvetica, Arial, sans-serif;
     padding: 0;
@@ -30,7 +31,9 @@ html, header, body, main{
     margin-right: auto;
 
 }
-
+/* 
+    Nav bar
+ */
 .navbar > .logo a::hover{
     text-decoration: none;
 }
@@ -66,12 +69,17 @@ html, header, body, main{
     font-size: 16px;
 }
 
-/* .navbar li:hover{
-    border-bottom: 2px solid rgb(26, 26, 26);
-} */
 .navbar a:hover{
     color: rgb(90, 90, 90);
     text-decoration: underline;
+}
+/* 
+    Footer
+*/
+footer{
+    width: 100%;
+    background:  rgb(180, 205, 180);
+    height: 55px;
 }
 
 .container-spacing{
@@ -93,9 +101,23 @@ body{
     background-color: #FFFAFA;
 }
 
+h1, h2, h3 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 .contents{
     flex: 1;
     background-color: #FFFAFA;
+}
+
+h2 > a{
+    text-decoration: none;
+    color: black;
+}
+
+h2 > a:hover{
+    text-decoration: underline;
+    color: black;
 }
 
 .article-contents{
@@ -116,8 +138,10 @@ p { /* .main-content { */
    line-height: 30px;
 }
 
-.article-contents p:first-of-type{
+.article-preview p{
     font-family: Helvetica, Arial, sans-serif;
+    padding-top: 15px;
+    margin-bottom: 40px;
 }
 
 .article-contents p:nth-child(2):first-letter{
@@ -132,6 +156,9 @@ p { /* .main-content { */
     border-bottom: 1px solid #ccc;
 }
 
+/* 
+    Flashes
+*/
 .flash{
     background-color: rgba(171, 198, 253, 0.7);
     border-left-color: rgba(145, 195, 230, 1);
