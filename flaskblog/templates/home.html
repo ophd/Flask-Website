@@ -9,7 +9,7 @@
                 <small>{{ post.date_posted.strftime('%d %B %Y') }}</small>
               </div>
                 {{ render_post_content(post.content, True) }}
-              <a href="{{ url_for('posts.post', post_id=post.id) }}">read more...</a>
+              <a class="continue-link" href="{{ url_for('posts.post', post_id=post.id) }}">continue reading...</a>
           </article>
       {% endfor %}
       <!-- This code is also used in the author_posts route. Can use \{\% include "<file>.html" \%\} 
