@@ -2,17 +2,16 @@
     {% block content %}
         <article class="article-contents">
             <div class="media-body">
-                <h2>{{ post.title }}</h2>
-                {% if post.author == current_user %}
-                    <div>
+                <div class="article-title">
+                    <h2>{{ post.title }}</h2>
+                    {% if post.author == current_user %}
                         <a class="btn btn-secondary btn-small" href="{{ url_for('posts.update_post', post_id=post.id)}}">Update</a>
                         <a class="btn btn-danger btn-small" href="#modal">Delete</a>
-                    </div>
-                {% endif %}
+                    {% endif %}
+                </div>
                 <div class="article-meta">
-                <a class="mr-2" href="#">{{ post.author.username }}</a>
-                <small class="text-muted">{{ post.date_posted.strftime('%d %B %Y') }}</small>
-                
+                    <a class="mr-2" href="#">{{ post.author.username }}</a>
+                    <small class="text-muted">{{ post.date_posted.strftime('%d %B %Y') }}</small>
                 </div>
                 {{ render_post_content(post.content) }}
             </div>
