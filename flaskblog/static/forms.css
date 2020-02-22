@@ -25,6 +25,46 @@
     font-size: 36px;
 }
 
+.form-input-text {
+    font-family: Helvetica, Arial, sans-serif;
+    border: 0px;
+    border-bottom: 2px solid gray;
+    height: 2rem;
+    font-size: 20px;
+    background-color: #FFFAFA;
+}
+
+.form-input-text-area {
+    font-family: Helvetica, Arial, sans-serif;
+    border: 2px solid gray;
+    height: 50vh;
+    font-size: 20px;
+    background-color: #FFFAFA;
+}
+
+.form-input-text-invalid {
+    border-bottom-color: rgb(189, 0 0);
+}
+
+.form-fieldset {
+    border: none;
+    /* border-bottom: 1px solid gray; */
+    
+}
+
+.form-fieldset > legend {
+    /* padding: 0 0 1.25em 0; */
+    /* border-bottom: 1px solid gray; */
+}
+
+.form-check {
+    font-family: Helvetica, Arial, sans-serif;
+    padding-top: 10px;
+    font-size: 20px
+}
+
+
+/* Buttons */
 .btn {
     font-family: Helvetica, Arial, sans-serif;
     border: 2px solid rgb(180, 205, 180);
@@ -62,37 +102,6 @@
     padding: 5px 10px; */
 }
 
-.form-input-text {
-    font-family: Helvetica, Arial, sans-serif;
-    border: 0px;
-    border-bottom: 2px solid gray;
-    height: 2rem;
-    font-size: 20px;
-    background-color: #FFFAFA;
-}
-
-.form-input-text-invalid {
-    border-bottom-color: rgb(189, 0 0);
-}
-
-.form-fieldset {
-    border: none;
-    /* border-bottom: 1px solid gray; */
-    
-}
-
-.form-fieldset > legend {
-    /* padding: 0 0 1.25em 0; */
-    /* border-bottom: 1px solid gray; */
-}
-
-.form-check {
-    font-family: Helvetica, Arial, sans-serif;
-    padding-top: 10px;
-    font-size: 20px
-}
-
-
 /* Modal */
 .modal {
     background-color: rgba(43, 43, 43, 0.6);
@@ -117,20 +126,25 @@
 }
 
 .modal-content {
-    width: 75%;
-    height: 60%;
+    width: 20%;
+    height: 10%;
     background-color: #FFFAFA;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 28%;
+    left: 38%;
     transform: translate(-50%, -50%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.25s;
+
+    display: flex;
+    align-items: center;
 }
 
-.modal-close {}
-.modal-header {}
-.modal-footer {}
+.modal-title {
+    margin: 0;
+    padding: 0;
+    padding-left: 5px;
+}
 
 
