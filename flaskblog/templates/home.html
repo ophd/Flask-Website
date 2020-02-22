@@ -1,17 +1,16 @@
 {% extends "layout.html" %}
     {% block content %}
       {% for post in posts.items %}
-          <article class="media content-section">
-            <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pictures/' + post.author.image_file) }}" />
-              <div class="media-body">
-                <div class="article-metadata">
-                  <a class="mr-2" href="{{ url_for('users.author_posts', username=post.author.username) }}">{{ post.author.username }}</a>
-                  <small class="text-muted">{{ post.date_posted.strftime('%d %B %Y') }}</small>
-                </div>
-                <h2><a class="article-title" href="{{ url_for('posts.post', post_id=post.id) }}">{{ post.title }}</a></h2>
-                <p class="article-content">{{ render_post_content(post.content) }}</p>
+          <!-- <article class="media content-section"> -->
+          <article class="article-preview">
+              <h2><a href="{{ url_for('posts.post', post_id=post.id) }}">{{ post.title }}</a></h2>
+              <div class="article-meta">
+                by <a href="{{ url_for('users.author_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+                <small>{{ post.date_posted.strftime('%d %B %Y') }}</small>
               </div>
-            </article>
+              {{ render_post_content(post.content, True) }}
+              <a class="continue-link" href="{{ url_for('posts.post', post_id=post.id) }}">continue reading...</a>
+          </article>
       {% endfor %}
       {% include "pagination.html" %}
     {% endblock content %}
