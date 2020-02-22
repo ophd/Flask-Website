@@ -12,15 +12,5 @@
               <a class="continue-link" href="{{ url_for('posts.post', post_id=post.id) }}">continue reading...</a>
             </article>
         {% endfor %}
-        {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
-          {% if page_num %}
-            {% if page_num == posts.page %}
-              <a href="{{url_for('users.author_posts', page=page_num, username=author.username)}}" class="btn btn-info mb-4">{{ page_num }}</a>              
-            {% else %}
-              <a href="{{url_for('users.author_posts', page=page_num, username=author.username)}}" class="btn btn-outline-info mb-4">{{ page_num }}</a>
-            {% endif %}
-          {% else %}
-          ...
-          {% endif %}
-        {% endfor %}
-    {% endblock content %}
+  {% include "pagination.html" %}
+  {% endblock content %}

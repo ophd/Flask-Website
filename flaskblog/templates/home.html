@@ -12,17 +12,5 @@
               <a class="continue-link" href="{{ url_for('posts.post', post_id=post.id) }}">continue reading...</a>
           </article>
       {% endfor %}
-      <!-- This code is also used in the author_posts route. Can use \{\% include "<file>.html" \%\} 
-        instead of duplicate code. -->
-      {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
-        {% if page_num %}
-          {% if page_num == posts.page %}
-            <a href="{{url_for('main.home', page=page_num)}}">{{ page_num }}</a>              
-          {% else %}
-            <a href="{{url_for('main.home', page=page_num)}}">{{ page_num }}</a>
-          {% endif %}
-        {% else %}
-        ...
-        {% endif %}
-      {% endfor %}
+      {% include "pagination.html" %}
     {% endblock content %}
