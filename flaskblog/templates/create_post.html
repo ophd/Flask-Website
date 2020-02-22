@@ -1,40 +1,40 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="content-section">
+<div class="">
     <form method="POST" action="">
         {{ form.hidden_tag() }}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">{{ legend }}</legend>
-            <div class="form-group">
-                {{ form.title.label(class="form-control-label") }}
+        <fieldset class="form-fieldset">
+            <legend class="">{{ legend }}</legend>
+            <div class="user-field">
+                {{ form.title.label(class="") }}
 
                 {% if form.title.errors %}
-                    {{ form.title(class="form-control form-control-lg is-invalid") }}    
-                    <div class="invalid-feedback">
+                    {{ form.title(class="form-control form-input-text-invalid") }}    
+                    <div class="invalid-input">
                         {% for error in form.title.errors %}
                             <span>{{ error }}</span>
                         {% endfor %}
                     </div>
                 {% else %}
-                    {{ form.title(class="form-control form-control-lg") }}
+                    {{ form.title(class="form-input-text") }}
                 {% endif %}
             </div>
-            <div class="form-group">
+            <div class="user-field">
                 {{ form.content.label(class="form-control-label") }}
                 {% if form.content.errors %}
-                    {{ form.content(class="form-control form-control-lg is-invalid") }}    
-                    <div class="invalid-feedback">
+                    {{ form.content(class="form-input-text-invalid") }}    
+                    <div class="invalid-input">
                         {% for error in form.content.errors %}
                             <span>{{ error }}</span>
                         {% endfor %}
                     </div>
                 {% else %}
-                    {{ form.content(class="form-control form-control-lg") }}
+                    {{ form.content(class="form-input-text-area") }}
                 {% endif %}
             </div>
         </fieldset>
         <div class="form-group">
-            {{ form.submit(class="btn btn-outline-info") }}
+            {{ form.submit(class="btn") }}
         </div>
     </form>
 </div>
