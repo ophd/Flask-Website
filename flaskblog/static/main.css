@@ -237,3 +237,10 @@ p > a:hover, .continue-link:hover {
     border-color: rgba(232, 74, 90);
     color: rgb(128, 90, 85);
 }
+
+.text-muted {
+    font-family: Helvetica, Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+}
+

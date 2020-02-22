@@ -8,7 +8,7 @@
                 by <a href="{{ url_for('users.author_posts', username=post.author.username) }}">{{ post.author.username }}</a>
                 <small>{{ post.date_posted.strftime('%d %B %Y') }}</small>
               </div>
-                {{ render_post_content(post.content, True) }}
+              {{ render_post_content(post.content, True) }}
               <a class="continue-link" href="{{ url_for('posts.post', post_id=post.id) }}">continue reading...</a>
           </article>
       {% endfor %}
